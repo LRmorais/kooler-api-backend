@@ -1,0 +1,26 @@
+{
+  "name": "kooler_api",
+  "version": "1.0.0",
+  "description": "Api rest do projeto kooler",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LRmorais/kooler-api-backend.git"
+  },
+  "author": "Lucas Morais",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LRmorais/kooler-api-backend.git/issues"
+  },
+  "homepage": "https://github.com/LRmorais/kooler-api-backend.git#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "http-status": "^1.5.0",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.3.5"
+  }
+}
