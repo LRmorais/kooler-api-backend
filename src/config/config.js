@@ -3,7 +3,7 @@ module.exports = {
         database: {
             host: 'localhost',
             port: 3306,
-            name: 'cadastro',
+            name: 'sensor',
             dialect: 'mysql',
             user: 'root',
             password: ''

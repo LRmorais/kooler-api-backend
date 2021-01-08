@@ -4,7 +4,7 @@ const status = require('http-status');
 const sequelize = require('./src/database/database');
 const app = express();
 const routes = require('./src/routes/routes.js');
-const router = require('./src/routes/routes.js');
+
 
 // informando que os dados trabalhados estaram em json
 app.use(express.json());

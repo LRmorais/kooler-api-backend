@@ -1,5 +1,5 @@
-// importa tabelas e atributos criados em usuario.js
-const Usuario = require('../models/usuario.js');
+// importa tabelas e atributos criados em sensorData.js
+const Sensor = require('../models/sensorData.js');
 // biblioteca utilizada para tratamentos de erros
 const status = require('http-status');
 
@@ -9,23 +9,18 @@ const status = require('http-status');
     exports.Insert = (req, res, next) => {
 
         // requisição.corpoDaRequisição.atributo
-        const nome = req.body.nome;
-        const salario = req.body.salario;
-        const dataNascimento = req.body.dataNascimento;
-        const ativo = req.body.ativo;
+        const sensor1 = req.body.sensor1;
 
         // metodo de post do sequelize 
-        Usuario.create({
+        Sensor.create({
             // primeiro nome é a propriedade do modelo(atributo no bd), segundo nome é a variavel com os dados armazenados
-            nome: nome,
-            salario: salario,
-            dataNascimento: dataNascimento,
-            ativo: ativo
+            sensor1: sensor1,
+            
         })
         // tratamento de erros
-        .then(usuario => {
-            if(usuario){
-                res.status(status.OK).send(usuario);
+        .then(sensor => {
+            if(sensor){
+                res.status(status.OK).send(sensor);
             } else{
                 res.status(status.NOT_FOUND).send();
             }
@@ -34,10 +29,10 @@ const status = require('http-status');
     }
 // método get para retornar todos os dados da tabela
     exports.SearchAll = (req, res, next) => {
-        Usuario.findAll()
-        .then(usuario => {
-            if(usuario){
-                res.status(status.OK).send(usuario);
+        Sensor.findAll()
+        .then(sensor => {
+            if(sensor){
+                res.status(status.OK).send(sensor);
             }
         })
         .catch(error => next(error));

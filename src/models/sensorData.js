@@ -3,7 +3,7 @@ const Sequelize = require('sequelize');
 // importa os atributos definidos em database.js
 const sequelize = require('../database/database.js');
 // criação de tabela na base de dados // ps precisa ter criado a base de dados
-const Usuario = sequelize.define("usuario",{
+const Sensor = sequelize.define("sensor",{
     //definir colunas e atributos
     id: {
         allowNull: false, //nao permite nulos
@@ -11,29 +11,13 @@ const Usuario = sequelize.define("usuario",{
         primaryKey: true, //define chave primaria
         type: Sequelize.INTEGER // definido como um inteiro
     },
-    nome: {
+    sensor1: {
         allowNull: false,
-        type: Sequelize.STRING(100), //define tipo string com tamanho de 100 caracteres
+        type: Sequelize.DOUBLE, //tipo float, permite números com casas decimais
         validate: {
-            len: [3,100] // validação de quantidade minima e maxima de caracteres
+            len: [0,999]
         }
     },
-    salario: {
-        allowNull: false,
-        type: Sequelize.DOUBLE,
-        validate: {
-            len: [1,99999]
-        }
-    },
-    dataNascimento:{
-        allowNull: false,
-        type: Sequelize.DATE()
-    },
-    ativo: {
-        allowNull: true,
-        type: Sequelize.BOOLEAN,
-        defaultValue: true
-    }
 });
 
-module.exports = Usuario
+module.exports = Sensor
